@@ -1,0 +1,114 @@
+:root {
+  --light: hsl(193, 38%, 86%);
+  --neon: hsl(150, 100%, 66%);
+  --gray1: hsl(217, 19%, 38%);
+  --gray2: hsl(217, 19%, 24%);
+  --dark: hsl(218, 23%, 16%);
+  --fontSize: calc(28rem/16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  font-family: 'Manrope', sans-serif;
+}
+
+.card {
+  flex-basis: calc(540rem/16);
+  flex-shrink: 1;
+  border-radius: 15px;
+  background-color: var(--gray2);
+  text-align: center;
+  position: relative;
+}
+
+.header {
+  color: var(--neon);
+  text-transform: uppercase;
+  font-size: calc(13rem/16);
+  line-height: calc(18rem/16);
+  letter-spacing: calc(4rem/16);
+  margin-top: 48px;
+}
+
+.advice {
+  display: block;
+  margin-inline: 48px;
+  font-size: var(--fontSize);
+  line-height: calc(38rem/16);
+  letter-spacing: calc(-0.3rem/16);
+  color: white;
+  margin-top: calc(24rem/16);
+}
+
+.advice::before {
+  content: '“';
+}
+
+.advice::after {
+  content: '”';
+}
+
+.divider {
+  margin: calc(40rem/16) auto 72px auto;
+}
+
+.btn {
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  width: 64px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--neon);
+  background-image: url(images/icon-dice.svg);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.btn:hover {
+  filter: drop-shadow(0 0 40px var(--neon));
+  transition: .1s;
+}
+
+.animate {
+  animation-name: rotation;
+  animation-duration: 2s;
+}
+
+@keyframes rotation {
+  from {transform: translateX(-50%);}
+  to  {transform: translateX(-50%) rotate(360deg);}
+}
+
+@media (max-width: 600px) {
+  .advice {
+    font-size: calc(24rem/16);
+    line-height: calc(33rem/16);
+    margin-inline: 24px;
+  }
+  .card {
+    margin-inline: 32px;
+  }
+}
+
+@media (max-width: 390px) {
+  .card {
+    margin-inline: 16px;
+  }
+}
