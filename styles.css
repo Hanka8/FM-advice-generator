@@ -47,7 +47,7 @@
   font-size: var(--fontSize);
   line-height: calc(38rem/16);
   letter-spacing: calc(-0.3rem/16);
-  color: white;
+  color: var(--light);
   margin-top: calc(24rem/16);
 }
 
