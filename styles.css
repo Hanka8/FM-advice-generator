@@ -114,4 +114,7 @@
   .card {
     margin-inline: 16px;
   }
+  .btn:hover {
+    filter: drop-shadow(0 0 20px var(--neon));
+  }
 }
